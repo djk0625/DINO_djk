@@ -319,13 +319,16 @@
   <div class="popup popup1">
     <div class="popup__inner">
       <div class="popup__close"></div>
+      <div class="notice-box"> <span class="cancel_btn" id="close" onclick="detailProductPage()">&times;</span></div>
       <div class="option_change">
         <div class="option_price_setting_left">
           <div class="option_price_setting_upper">
             <div class="subtitle">옵션 가격 설정</div>
+          <form id=reset_form>
+
             <div class="option_price_setting_inner_container">
               <div class="option_price_setting_inner_title">배송비</div>
-              <input type="text" placeholder="10,0000원" />
+              <input type="text" placeholder="10,0000원" id="bill0">
               <div>원 추가하기</div>
               <div class="apply">적용</div>
             </div>
@@ -337,18 +340,21 @@
               <div class="option_price_setting_inner_title">선택 옵션 최대가 기준 설정</div>
               <div class="apply">적용</div>
             </div>
+              </form>
             <div class="reset">
-              <div>가격 초기화</div>
+              <input type="button" id="btn_reset" value="가격 초기화"></button>
               <img src="../static/images/settings_backup_restore.png" alt="" />
             </div>
           </div>
           <div class="option_price_setting_downner">
             <div class="subtitle">옵션명 일괄수정</div>
+                        <form id=reset_form_option>
+
             <div class="option_price_setting_inner_container">
               <div class="option_price_setting_inner_title">글자 변경</div>
-              <input type="text" placeholder="가나다라마" />
+              <input type="text" placeholder="가나다라마" id="word1"/>
               <p>></p>
-              <input type="text" placeholder="가나다라마" />
+              <input type="text" placeholder="가나다라마" id="word2"/>
               <div class="apply">적용</div>
             </div>
             <div class="option_price_setting_inner_container">
@@ -367,8 +373,9 @@
               <p></p>
               <div id="bluetext">1~N 옵션</div>
             </div>
+              </form>
             <div class="reset">
-              <div>옵션명 초기화</div>
+              <input type="button" id="btn_reset_option" value="옵션명 초기화"></button>
               <img src="../static/images/settings_backup_restore.png" alt="" />
             </div>
           </div>
@@ -386,14 +393,14 @@
           <div class="item-comtainer">
             <div class="item-container-inner">
               <div class="item-container-left">
-                <input type="checkbox" name="option" id="" />
+                <input type="checkbox" name="option" id="chk1" />
                 <div class="nth_of_item">1</div>
                 <img src="../static/images/sample_item.png" alt="" />
               </div>
               <div class="item-container-right">
                 <div class="item-container-right-first-element">
                   <p>¥188.1</p>
-                  <input type="text" placeholder="30,000" />
+                  <input type="text" placeholder="30,000" id="bill1"/>
                 </div>
                 <input type="text" placeholder="A옵션" id="opt1"/>
                 <span class="f_weight" id="firstOption">0 / 50 Bytes</span>
@@ -401,14 +408,14 @@
             </div>
             <div class="item-container-inner">
               <div class="item-container-left">
-                <input type="checkbox" name="option" id="" />
+                <input type="checkbox" name="option" id="chk2" />
                 <div class="nth_of_item">1</div>
                 <img src="../static/images/sample_item.png" alt="" />
               </div>
               <div class="item-container-right">
                 <div class="item-container-right-first-element">
                   <p>¥188.1</p>
-                  <input type="text" placeholder="30,000" />
+                  <input type="text" placeholder="30,000" id="bill2"/>
                 </div>
                 <input type="text" placeholder="A옵션" id="opt2" />
                 <span class="f_weight" id="secondOption">0 / 50 Bytes</span>
@@ -416,14 +423,14 @@
             </div>
             <div class="item-container-inner">
               <div class="item-container-left">
-                <input type="checkbox" name="option" id="" />
+                <input type="checkbox" name="option" id="chk3" />
                 <div class="nth_of_item">1</div>
                 <img src="../static/images/sample_item.png" alt="" />
               </div>
               <div class="item-container-right">
                 <div class="item-container-right-first-element">
                   <p>¥188.1</p>
-                  <input type="text" placeholder="30,000" />
+                  <input type="text" placeholder="30,000" id="bill3"/>
                 </div>
                 <input type="text" placeholder="A옵션" id="opt3" />
                 <span class="f_weight" id="thirdOption">0 / 50 Bytes</span>
@@ -431,14 +438,14 @@
             </div>
             <div class="item-container-inner">
               <div class="item-container-left">
-                <input type="checkbox" name="option" id="" />
+                <input type="checkbox" name="option" id="chk4" />
                 <div class="nth_of_item">1</div>
                 <img src="../static/images/sample_item.png" alt="" />
               </div>
               <div class="item-container-right">
                 <div class="item-container-right-first-element">
                   <p>¥188.1</p>
-                  <input type="text" placeholder="30,000" />
+                  <input type="text" placeholder="30,000" id="bill4"/>
                 </div>
                 <input type="text" placeholder="A옵션" id="opt4" />
                 <span class="f_weight" id="fourthOption">0 / 50 Bytes</span>
@@ -446,14 +453,14 @@
             </div>
             <div class="item-container-inner">
               <div class="item-container-left">
-                <input type="checkbox" name="option" id="" />
+                <input type="checkbox" name="option" id="chk5" />
                 <div class="nth_of_item">1</div>
                 <img src="../static/images/sample_item.png" alt="" />
               </div>
               <div class="item-container-right">
                 <div class="item-container-right-first-element">
                   <p>¥188.1</p>
-                  <input type="text" placeholder="30,000" />
+                  <input type="text" placeholder="30,000" id="bill5"/>
                 </div>
                 <input type="text" placeholder="A옵션" id="opt5"/>
                 <span class="f_weight" id="fifthOption">0 / 50 Bytes</span>
@@ -461,14 +468,14 @@
             </div>
             <div class="item-container-inner">
               <div class="item-container-left">
-                <input type="checkbox" name="option" id="" />
+                <input type="checkbox" name="option" id="chk6" />
                 <div class="nth_of_item">1</div>
                 <img src="../static/images/sample_item.png" alt="" />
               </div>
               <div class="item-container-right">
                 <div class="item-container-right-first-element">
                   <p>¥188.1</p>
-                  <input type="text" placeholder="30,000" />
+                  <input type="text" placeholder="30,000" id="bill6"/>
                 </div>
                 <input type="text" placeholder="A옵션" id="opt6"/>
                 <span class="f_weight" id="sixthOption">0 / 50 Bytes</span>
@@ -476,14 +483,14 @@
             </div>
             <div class="item-container-inner">
               <div class="item-container-left">
-                <input type="checkbox" name="option" id="" />
+                <input type="checkbox" name="option" id="chk7" />
                 <div class="nth_of_item">1</div>
                 <img src="../static/images/sample_item.png" alt="" />
               </div>
               <div class="item-container-right">
                 <div class="item-container-right-first-element">
                   <p>¥188.1</p>
-                  <input type="text" placeholder="30,000" />
+                  <input type="text" placeholder="30,000" id="bill7"/>
                 </div>
                 <input type="text" placeholder="A옵션" id="opt7"/>
                 <span class="f_weight" id="seventhOption">0 / 50 Bytes</span>
@@ -491,16 +498,16 @@
             </div>
             <div class="item-container-inner">
               <div class="item-container-left">
-                <input type="checkbox" name="option" id="" />
+                <input type="checkbox" name="option" id="chk8" />
                 <div class="nth_of_item">1</div>
                 <img src="../static/images/sample_item.png" alt="" />
               </div>
               <div class="item-container-right">
                 <div class="item-container-right-first-element">
                   <p>¥188.1</p>
-                  <input type="text" placeholder="30,000" id="opt8"/>
+                  <input type="text" placeholder="30,000" id="bill8"/>
                 </div>
-                <input type="text" placeholder="A옵션" />
+                <input type="text" placeholder="A옵션" id="opt8"/>
                 <span class="f_weight" id="eighthOption">0 / 50 Bytes</span>
               </div>
             </div>
@@ -516,7 +523,7 @@
               </div>
             </div>
             <div class="confirm_cancel_btn">
-                <button type="button" value="취소" class="cancel_btn" onclick="closeLayerPopup()">취소</button>
+                <button type="button" value="취소" class="cancel_btn" onclick="cancel()">취소</button>
                 <button type="button" value="저장" class="submit_btn" onclick="closeLayerPopup()">저장</button>
             </div>
           </div>
@@ -530,9 +537,11 @@
   <div class="popup popup2">
     <div class="popup__inner">
       <div class="popup__close"></div>
+
       <div class="page_detail_edit">
-        <p>상세페이지 수정</p>
+      <div class="notice-box"> <span class="cancel_btn" id="close" onclick="detailPage()">&times;</span>  <p>상세페이지 수정</p> </div>
         <div class="page_detail_edit_inner">
+            <form id="detail_page">
           <label for="video_upload" class="video_upload">
             <input type="checkbox" value="" id="video_upload" />
             <p>동영상 업로드</p>
@@ -541,6 +550,7 @@
             <input type="checkbox" value="" id="mute" />
             <p>음소거</p>
           </label>
+                </form>
           <div class="img_edit">
             <img src="../static/images/img edit.png" alt="" />
             <p>이미지 편집</p>
@@ -549,10 +559,12 @@
             <img src="../static/images/ai.png" alt="" />
             <p>AI 번역</p>
           </div>
-          <div class="reset_btn">초기화</div>
+          <div class="reset_btn">
+              <input type="button" id="btn_reset_option_detail" value="초기화"></button>
+            </div>
         </div>
         <div class="confirm_cancel_btn">
-          <input type="submit" value="취소" class="cancel_btn" />
+            <button type="button" value="취소" class="cancel_btn" onclick="checkBtn()">취소</button>
           <input type="submit" value="확인" class="submit_btn" />
         </div>
       </div>
@@ -656,7 +668,7 @@
   <div class="popup popup5">
     <div class="popup__inner">
       <div class="popup__close"></div>
-
+      <div class="notice-box"> <span class="cancel_btn" id="close" onclick="closeCustom()">&times;</span> </div>
       <div class="custom_text_change">
         <p>커스텀 글자변경 설정</p>
         <!-- <a href="javascript:window.close();"> <img class="x_btn" src="../static/images/x_btn.png"></a> -->
@@ -664,78 +676,78 @@
           <ul>
             <li>
               <span>1.</span>
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF1"/>
               <img src="../static/images/east.png" />
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF2"/>
             </li>
 
             <li>
               <span>2.</span>
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF3"/>
               <img src="../static/images/east.png" />
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF4"/>
             </li>
 
             <li>
               <span>3.</span>
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF5"/>
               <img src="../static/images/east.png" />
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF6"/>
             </li>
 
             <li>
               <span>4.</span>
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF7"/>
               <img src="../static/images/east.png" />
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF8"/>
             </li>
 
             <li>
               <span>5.</span>
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF9"/>
               <img src="../static/images/east.png" />
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF10"/>
             </li>
 
             <li>
               <span>6.</span>
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF11"/>
               <img src="../static/images/east.png" />
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF12"/>
             </li>
 
             <li>
               <span>7.</span>
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF13"/>
               <img src="../static/images/east.png" />
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF14"/>
             </li>
 
             <li>
               <span>8.</span>
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF15"/>
               <img src="../static/images/east.png" />
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF16"/>
             </li>
 
             <li>
               <span>9.</span>
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF17"/>
               <img src="../static/images/east.png" />
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF18"/>
             </li>
 
             <li class="last_text">
               <span>10.</span>
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF19"/>
               <img src="../static/images/east.png" />
-              <input type="text" name="text_custom" class="text_field" placeholder="" />
+              <input type="text" name="text_custom" class="text_field" placeholder="" id="textF20"/>
             </li>
           </ul>
         </div>
 
         <div class="confirm_cancel_btn">
-          <input type="submit" value="취 소" class="cancel_btn" />
+                <button type="button" value="취 소" class="cancel_btn" onclick="cancelCustom()">취소</button>
           <input type="submit" value="확 인" class="submit_btn" />
         </div>
       </div>
@@ -745,6 +757,27 @@
 
   <script>
     const modal_popup = function () {
+      // 상세 페이지 초기화 버튼 기능
+      $("#btn_reset_option_detail").click(function() {
+          $("#detail_page").each(function() {
+            this.reset();
+          });
+      })  ;
+
+      // 가격 초기화 버튼 기능
+      $("#btn_reset").click(function() {
+          $("#reset_form").each(function() {
+              this.reset();
+          });
+      });
+
+      // 옵션명 초기화 버튼 기능
+      $("#btn_reset_option").click(function() {
+          $("#reset_form_option").each(function() {
+              this.reset();
+          });
+      }) ;
+
       //상품옵션 수정 팝업
       $(".option__modify").click(function () {
         $(".popup__dim").addClass("modal");
